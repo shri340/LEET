@@ -1,21 +1,17 @@
 
-import java.util.HashMap;
-import java.util.Map;
-
 class Solution {
     public int numIdenticalPairs(int[] nums) {
 
-        Map<Integer, Integer> freq = new HashMap<>();
-
         int count = 0;
 
-        for (int num : nums) {
+        for (int i = 0; i < nums.length; i++) {
 
-            int previous = freq.getOrDefault(num, 0);
+            for (int j = i + 1; j < nums.length; j++) {
 
-            count += previous;
-
-            freq.put(num, previous + 1);
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
         }
 
         return count;
