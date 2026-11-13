@@ -4,15 +4,15 @@ class Solution {
 
         int maxWealth = 0;
 
-        for (int[] customer : accounts) {
+        for (int i = 0; i < accounts.length; i++) {
 
-            int sum = 0;
+            int wealth = 0;
 
-            for (int money : customer) {
-                sum += money;
+            for (int j = 0; j < accounts[i].length; j++) {
+                wealth += accounts[i][j];
             }
 
-            maxWealth = Math.max(maxWealth, sum);
+            maxWealth = Math.max(maxWealth, wealth);
         }
 
         return maxWealth;
